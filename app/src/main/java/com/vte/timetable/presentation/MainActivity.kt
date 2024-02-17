@@ -133,10 +133,10 @@ fun ListViewT(navController: NavController,scalingLazyListState: ScalingLazyList
                 coroutineScope.launch {
                     scalingLazyListState.scrollBy(it.verticalScrollPixels)
                     if(it.verticalScrollPixels > 0) {
-                        scalingLazyListState.animateScrollToItem(scalingLazyListState.centerItemIndex.inc())
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)+(1/2))
                     }
                     else if (it.verticalScrollPixels < 0) {
-                        scalingLazyListState.animateScrollToItem(scalingLazyListState.centerItemIndex.dec())
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)-(1/2))
                     }
                 }
                 true
@@ -227,10 +227,10 @@ fun ListViewDay(PeriodList: List<String>, scalingLazyListState: ScalingLazyListS
                 coroutineScope.launch {
                     scalingLazyListState.scrollBy(it.verticalScrollPixels)
                     if(it.verticalScrollPixels > 0) {
-                        scalingLazyListState.animateScrollToItem(scalingLazyListState.centerItemIndex.inc())
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)+(1/2))
                     }
                     else if (it.verticalScrollPixels < 0) {
-                        scalingLazyListState.animateScrollToItem(scalingLazyListState.centerItemIndex.dec())
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)-(1/2))
                     }
                 }
                 true
