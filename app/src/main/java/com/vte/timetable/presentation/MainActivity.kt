@@ -155,7 +155,7 @@ fun ListViewT(navController: NavController,scalingLazyListState: ScalingLazyList
                 onClick = {navController.navigate("mon")},
                 modifier = Modifier.height(50.dp)
                 // backgroundPainter = CardDefaults.cardBackgroundPainter(startBackgroundColor = Color.DarkGray)
-                // Nothing
+
             ){
                 TextForTableDay("Monday")
             }
