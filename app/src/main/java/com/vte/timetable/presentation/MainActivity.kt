@@ -9,10 +9,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedContentTransitionScope
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.background
 import androidx.compose.foundation.focusable
-import androidx.compose.foundation.gestures.animateScrollBy
 import androidx.compose.foundation.gestures.scrollBy
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
@@ -25,8 +24,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.input.rotary.RotaryInputModifierNode
-import androidx.compose.ui.input.rotary.RotaryScrollEvent
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.rotary.onRotaryScrollEvent
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -36,6 +34,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.wear.compose.material.Card
+import androidx.wear.compose.material.CardDefaults
 import androidx.wear.compose.material.PositionIndicator
 import androidx.wear.compose.material.Scaffold
 import androidx.wear.compose.material.ScalingLazyColumn
@@ -132,11 +131,10 @@ fun ListViewT(navController: NavController,scalingLazyListState: ScalingLazyList
             .onRotaryScrollEvent {
                 coroutineScope.launch {
                     scalingLazyListState.scrollBy(it.verticalScrollPixels)
-                    if(it.verticalScrollPixels > 0) {
-                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)+(1/2))
-                    }
-                    else if (it.verticalScrollPixels < 0) {
-                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)-(1/2))
+                    if (it.verticalScrollPixels > 0) {
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex) + (1 / 2))
+                    } else if (it.verticalScrollPixels < 0) {
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex) - (1 / 2))
                     }
                 }
                 true
@@ -156,6 +154,7 @@ fun ListViewT(navController: NavController,scalingLazyListState: ScalingLazyList
             Card(
                 onClick = {navController.navigate("mon")},
                 modifier = Modifier.height(50.dp)
+                // backgroundPainter = CardDefaults.cardBackgroundPainter(startBackgroundColor = Color.DarkGray)
             ){
                 TextForTableDay("Monday")
             }
@@ -226,11 +225,10 @@ fun ListViewDay(PeriodList: List<String>, scalingLazyListState: ScalingLazyListS
             .onRotaryScrollEvent {
                 coroutineScope.launch {
                     scalingLazyListState.scrollBy(it.verticalScrollPixels)
-                    if(it.verticalScrollPixels > 0) {
-                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)+(1/2))
-                    }
-                    else if (it.verticalScrollPixels < 0) {
-                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex)-(1/2))
+                    if (it.verticalScrollPixels > 0) {
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex) + (1 / 2))
+                    } else if (it.verticalScrollPixels < 0) {
+                        scalingLazyListState.animateScrollToItem((scalingLazyListState.centerItemIndex) - (1 / 2))
                     }
                 }
                 true
@@ -267,7 +265,7 @@ fun ListViewDay(PeriodList: List<String>, scalingLazyListState: ScalingLazyListS
                 onClick = {},
                 modifier = Modifier.height(70.dp)
             ){
-                TextForTablePeriod(PeriodList[4],"11.40 - 12.30")
+                TextForTablePeriod(PeriodList[3],"11.40 - 12.30")
             }
         }
         item {
