@@ -267,7 +267,7 @@ fun ListViewDay(PeriodList: List<String>, scalingLazyListState: ScalingLazyListS
                 onClick = {},
                 modifier = Modifier.height(70.dp)
             ){
-                TextForTablePeriod(PeriodList[3],"11.40 - 12.30")
+                TextForTablePeriod(PeriodList[3],"10.50 - 11.40")
             }
         }
         item {
