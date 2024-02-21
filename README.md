@@ -28,4 +28,4 @@ Amrita School of Engineering, Amritapuri campus, is a premier institution known 
 - [Vishnu Tejas](https://github.com/vishnutejase) - Developer
 
 ## License
-This project is licensed under the [MIT License](about:blank).
+This project is licensed under the [MIT License](/LICENSE.txt).
